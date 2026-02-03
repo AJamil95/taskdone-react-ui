@@ -1,18 +1,20 @@
 import { Box, Typography } from "@mui/material";
 
 interface Props {
-  message: string
+  message: string;
 }
 
-export const Footer = ({message}: Props) => {
+export const Footer = ({ message }: Props) => {
   return (
     <Box
       sx={{
-        bgcolor: 'grey.500',
-        color: 'white',
+        bgcolor: "grey.500",
+        color: "white",
         py: 1,
-        textAlign: 'center',
-        zIndex: 10
+        textAlign: "center",
+        zIndex: 10,
+        width: "100%",
+        flexShrink: 0,
       }}
     >
       <Typography variant="body2">{message}</Typography>
