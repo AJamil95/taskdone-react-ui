@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
+# TaskDone React UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Acerca del proyecto
 
-Currently, two official plugins are available:
+TaskDone React UI es una aplicación web moderna para la gestión de tareas personales, desarrollada con React 19, TypeScript y Material-UI (MUI). Incluye funcionalidades de autenticación de usuarios, creación, edición, eliminación y filtrado de tareas, con paginación servidor-side, búsqueda en tiempo real y validaciones avanzadas. Utiliza Context API para el manejo de estado, React Router para navegación y Axios para las llamadas a la API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerrequisitos
 
-## React Compiler
+- Node.js versión 20.19.0 o superior (o 22.12.0+)
+- npm o yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cómo ejecutar
 
-## Expanding the ESLint configuration
+Después de clonar o descargar el proyecto:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Copia el archivo `.env.sample` a `.env` y configura las variables de entorno necesarias (ej. `VITE_API_URL`).
+2. Instala las dependencias: `npm install`
+3. Ejecuta el servidor de desarrollo: `npm run dev`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Otros comandos útiles
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Verificar tipos, compilar y minificar para producción: `npm run build`
+- Linting con ESLint: `npm run lint`
+- Previsualizar la compilación: `npm run preview`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Despliegue en GitHub Pages
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+La aplicación está desplegada en: https://ajamil95.github.io/taskdone-react-ui/
